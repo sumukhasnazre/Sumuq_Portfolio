@@ -1,0 +1,107 @@
+{
+  "basics": {
+    "name": "SUMUKHA S NAZRE",
+    "title": "Associate Software Engineer",
+    "summary": "Associate software engineer with hands-on experience in Python, SQL, PySpark, Snowflake, and Databricks. Experienced in building scalable Lakehouse architectures, implementing SCD Type 2 transformations, and migrating enterprise data to Delta Lake. Seeking to contribute to high-performance data engineering solutions in a growth-driven organization.",
+    "location": "Bengaluru, Karnataka, India",
+    "email": "sumuqnazre123@gmail.com",
+    "phone": "+91 74119-53368",
+    "links": {
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  "experience": [
+    {
+      "company": "Decision Minds",
+      "role": "Associate Software Engineer",
+      "location": "Bengaluru, India",
+      "dates": "Feb 2025 – Present",
+      "client": "NXP Semiconductors",
+      "impact_highlights": ["Medallion Architecture", "SCD Type 2", "Oracle to Delta Lake"],
+      "bullets": [
+        "Designed and implemented end-to-end Databricks Lakehouse pipelines using Lakebridge and Lakeflow Connect, following Medallion Architecture (Bronze → Silver → Gold) for scalable and structured data processing.",
+        "Implemented SCD Type 2 transformations aligned with Structured Data Processing (SDP) standards to maintain historical accuracy and auditability.",
+        "Migrated enterprise datasets from Oracle to Databricks Delta Lake, performing reconciliation, validation, and performance tuning.",
+        "Developed and optimized Delta tables using PySpark and SQL to deliver analytics-ready datasets.",
+        "Improved data pipeline performance and reliability through optimization and structured validation frameworks."
+      ]
+    },
+    {
+      "company": "Decision Minds",
+      "role": "Associate Software Engineer",
+      "location": "Bengaluru, India",
+      "dates": "Feb 2025 – Present",
+      "client": "GoFundMe",
+      "impact_highlights": ["ELT Pipelines", "Complex SQL", "Snowflake Opt"],
+      "bullets": [
+        "Built and maintained scalable ELT pipelines using Snowflake and DBT, transforming raw data into curated, analytics-ready datasets.",
+        "Developed complex SQL transformations using joins, window functions, and aggregations on large-scale datasets to support business analytics.",
+        "Optimized Snowflake performance using clustering, partition pruning, and efficient warehouse utilization, significantly reducing query runtime and cost."
+      ]
+    }
+  ],
+  "top_achievements": [
+    {
+      "title": "Lakehouse Architect",
+      "description": "Implemented Medallion Architecture (Bronze → Silver → Gold) for NXP Semiconductors.",
+      "metric": "Scalable Processing"
+    },
+    {
+      "title": "Cloud Transformation",
+      "description": "Migrated complex enterprise datasets from Oracle to Databricks Delta Lake.",
+      "metric": "End-to-End Migration"
+    },
+    {
+      "title": "Performance Guru",
+      "description": "Significantly reduced Snowflake query runtime and cost through efficient partitioning.",
+      "metric": "Cost Optimized"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Smart Legacy Scripts Converter",
+      "stack": "Python / Flask",
+      "bullets": [
+        "Developed a Python-based automation tool to convert legacy Perl (.pl) and Shell (.sh) scripts into Python (.py).",
+        "Built Flask-based web application and CLI interface for batch conversion.",
+        "Designed modular architecture with parsers, translators, and validators to preserve business logic and directory structure."
+      ]
+    },
+    {
+      "title": "Image Colorization Tool",
+      "stack": "Python / HTML",
+      "bullets": [
+        "Developed an image processing tool to convert grayscale images to color using Python and HTML interface."
+      ]
+    },
+    {
+      "title": "Strata AI-Powered Migration Platform",
+      "stack": "Oracle / Databricks / SQL",
+      "bullets": [
+        "Developed an automated migration tool to convert Oracle database objects (tables, views, sequences, procedures) into Databricks-compatible SQL with dependency resolution.",
+        "Implemented intelligent parsing, schema transformation, and constraint handling (FK, CHECK, sequences → identity) to ensure accurate migration."
+      ]
+    }
+  ],
+  "skills": {
+    "Programming": ["Python", "SQL", "PySpark"],
+    "Data Engineering": ["ETL Pipelines", "Snow-Pipe", "Data Modeling", "SCD Type 2", "Delta Lake", "Medallion Architecture"],
+    "Cloud Platforms": ["AWS", "Azure"],
+    "Data Platforms": ["Databricks", "Snowflake"],
+    "Web Technologies": ["HTML", "CSS"]
+  },
+  "education": [
+    {
+      "degree": "B.E. in Computer Science Engineering",
+      "institution": "PES Institute of Technology and Management",
+      "dates": "2021 – 2025"
+    }
+  ],
+  "certifications": [
+    "Databricks Certified Data Engineer Associate",
+    "SnowPro Associate – Snowflake",
+    "SnowPro Core – Snowflake",
+    "Databricks Lakehouse Fundamentals"
+  ]
+}
