@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Download, ArrowRight } from 'lucide-react';
 import React from 'react';
 import resumeData from '@/src/data/resume.json';
+import { TechParticles } from './TechParticles';
 
 export const Hero: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const { scrollY } = useScroll();
@@ -42,6 +43,9 @@ export const Hero: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
           : 'from-slate-50 via-slate-50/60 to-transparent'
         }`} />
       </motion.div>
+
+      {/* Snowflake & Databricks Effects */}
+      <TechParticles theme={theme} />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 

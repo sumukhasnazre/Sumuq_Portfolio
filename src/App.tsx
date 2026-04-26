@@ -9,6 +9,7 @@ import { AnimatedBackground } from './components/AnimatedBackground';
 import { SplashScreen } from './components/SplashScreen';
 import { Hero } from './components/Hero';
 import { Experience } from './components/Experience';
+import { DataPipeline } from './components/DataPipeline';
 import { Trophy, Code, Award, GraduationCap, Github, Linkedin, Mail, Smartphone, Sun, Moon } from 'lucide-react';
 import resumeData from './data/resume.json';
 
@@ -79,6 +80,8 @@ export default function App() {
               </div>
             </div>
           </nav>
+
+          <DataPipeline theme={theme} />
 
           <Hero theme={theme} />
 
