@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export const AnimatedBackground: React.FC<{ theme: "dark" | "light" }> = ({
-  theme,
-}) => {
+export const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -40,7 +38,7 @@ export const AnimatedBackground: React.FC<{ theme: "dark" | "light" }> = ({
         this.y = Math.random() * canvas!.height;
         this.vx = (Math.random() - 0.5) * 0.3;
         this.vy = (Math.random() - 0.5) * 0.3;
-        this.size = Math.random() * (theme === "dark" ? 2 : 1.5) + 1;
+        this.size = Math.random() * (theme === 'dark' ? 2 : 1.5) + 1;
       }
 
       update() {
@@ -55,10 +53,7 @@ export const AnimatedBackground: React.FC<{ theme: "dark" | "light" }> = ({
         if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle =
-          theme === "dark"
-            ? "rgba(100, 150, 255, 0.15)"
-            : "rgba(59, 130, 246, 0.1)";
+        ctx.fillStyle = theme === 'dark' ? 'rgba(100, 150, 255, 0.15)' : 'rgba(59, 130, 246, 0.1)';
         ctx.fill();
       }
     }
@@ -73,20 +68,15 @@ export const AnimatedBackground: React.FC<{ theme: "dark" | "light" }> = ({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Background gradient
-      const gradient = ctx.createLinearGradient(
-        0,
-        0,
-        canvas.width,
-        canvas.height,
-      );
-      if (theme === "dark") {
-        gradient.addColorStop(0, "#020617"); // slate-950
-        gradient.addColorStop(0.5, "#0f172a"); // slate-900
-        gradient.addColorStop(1, "#020617");
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      if (theme === 'dark') {
+        gradient.addColorStop(0, '#020617'); // slate-950
+        gradient.addColorStop(0.5, '#0f172a'); // slate-900
+        gradient.addColorStop(1, '#020617');
       } else {
-        gradient.addColorStop(0, "#f8fafc"); // slate-50
-        gradient.addColorStop(0.5, "#f1f5f9"); // slate-100
-        gradient.addColorStop(1, "#f8fafc");
+        gradient.addColorStop(0, '#f8fafc'); // slate-50
+        gradient.addColorStop(0.5, '#f1f5f9'); // slate-100
+        gradient.addColorStop(1, '#f8fafc');
       }
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -107,10 +97,9 @@ export const AnimatedBackground: React.FC<{ theme: "dark" | "light" }> = ({
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             const opacity = 0.05 * (1 - dist / 150);
-            ctx.strokeStyle =
-              theme === "dark"
-                ? `rgba(100, 150, 255, ${opacity})`
-                : `rgba(59, 130, 246, ${opacity * 1.5})`;
+            ctx.strokeStyle = theme === 'dark'
+              ? `rgba(100, 150, 255, ${opacity})`
+              : `rgba(59, 130, 246, ${opacity * 1.5})`;
             ctx.stroke();
           }
         }
@@ -129,10 +118,9 @@ export const AnimatedBackground: React.FC<{ theme: "dark" | "light" }> = ({
     };
   }, [theme]);
 
-  const bgGradient =
-    theme === "dark"
-      ? "linear-gradient(to bottom right, #020617, #0f172a, #020617)"
-      : "linear-gradient(to bottom right, #f8fafc, #f1f5f9, #f8fafc)";
+  const bgGradient = theme === 'dark'
+    ? 'linear-gradient(to bottom right, #020617, #0f172a, #020617)'
+    : 'linear-gradient(to bottom right, #f8fafc, #f1f5f9, #f8fafc)';
 
   return (
     <canvas
