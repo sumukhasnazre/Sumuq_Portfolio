@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 export const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -7,15 +7,17 @@ export const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ them
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
     let particles: Particle[] = [];
-    
+
     // Check for reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
     if (prefersReducedMotion) return;
 
     const resize = () => {
@@ -64,7 +66,7 @@ export const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ them
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       // Background gradient
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       if (theme === 'dark') {
@@ -95,8 +97,8 @@ export const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ them
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
             const opacity = 0.05 * (1 - dist / 150);
-            ctx.strokeStyle = theme === 'dark' 
-              ? `rgba(100, 150, 255, ${opacity})` 
+            ctx.strokeStyle = theme === 'dark'
+              ? `rgba(100, 150, 255, ${opacity})`
               : `rgba(59, 130, 246, ${opacity * 1.5})`;
             ctx.stroke();
           }
@@ -106,18 +108,18 @@ export const AnimatedBackground: React.FC<{ theme: 'dark' | 'light' }> = ({ them
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    window.addEventListener('resize', resize);
+    window.addEventListener("resize", resize);
     resize();
     animate();
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationFrameId);
     };
   }, [theme]);
 
-  const bgGradient = theme === 'dark' 
-    ? 'linear-gradient(to bottom right, #020617, #0f172a, #020617)' 
+  const bgGradient = theme === 'dark'
+    ? 'linear-gradient(to bottom right, #020617, #0f172a, #020617)'
     : 'linear-gradient(to bottom right, #f8fafc, #f1f5f9, #f8fafc)';
 
   return (
