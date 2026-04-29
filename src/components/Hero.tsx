@@ -125,18 +125,42 @@ export const Hero: React.FC<{ theme: 'dark' | 'light' }> = ({ theme }) => {
 
       {/* Hero Headshot (Visible on desktop) - Placed to the right as requested */}
       <motion.div
-        initial={{ opacity: 0, x: 50, scale: 0.9 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ duration: 1, delay: 0.6 }}
+        initial={{ opacity: 0, x: 100, filter: 'blur(10px)' }}
+        animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
         style={{ opacity: imageOpacity }}
-        className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-[450px] h-[650px] z-20 pointer-events-none"
+        className="hidden lg:block absolute right-0 top-[65%] -translate-y-1/2 w-[600px] h-[800px] z-20 pointer-events-none"
       >
-        <img 
-          src="/profile.png" 
-          alt="Sumukha Headshot"
-          className="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all duration-500"
-          referrerPolicy="no-referrer"
-        />
+        <motion.div
+          animate={{ 
+            y: [0, -15, 0],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="relative w-full h-full p-8"
+        >
+          <img 
+            src="/profile.png" 
+            alt="Sumukha Profile"
+            className="w-full h-full object-contain filter drop-shadow-[0_0_60px_rgba(59,130,246,0.3)] transition-all duration-700 hover:scale-[1.02]"
+            style={{
+              maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 95%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 95%)'
+            }}
+            referrerPolicy="no-referrer"
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
+          />
+          
+          {/* Subtle edge-blur overlays to further soften the square look */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className={`absolute inset-0 opacity-40 blur-3xl rounded-full ${theme === 'dark' ? 'bg-blue-600/10' : 'bg-blue-200/20'}`} />
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
